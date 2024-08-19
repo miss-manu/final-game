@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfn4ndj67yevu"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_7ylae"]
+[ext_resource type="Texture2D" uid="uid://xja7drw2a0p0" path="res://escape.png" id="2_hvi5x"]
+[ext_resource type="PackedScene" uid="uid://ff1iiyqbpbr0" path="res://prefabs/player.tscn" id="3_i00pw"]
+[ext_resource type="PackedScene" uid="uid://blefcs0qb72l1" path="res://prefabs/tuna.tscn" id="4_ruloj"]
+[ext_resource type="PackedScene" uid="uid://c85wolvpbjtn7" path="res://prefabs/brown_trout.tscn" id="5_odgl7"]
+[ext_resource type="PackedScene" uid="uid://bmllbuij67a7o" path="res://prefabs/cup.tscn" id="6_jprsc"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_7ylae")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1163.0
+offset_bottom = 644.0
+texture = ExtResource("2_hvi5x")
+expand_mode = 2
+
+[node name="player" parent="." instance=ExtResource("3_i00pw")]
+position = Vector2(120, 175)
+
+[node name="tuna" parent="." instance=ExtResource("4_ruloj")]
+position = Vector2(1046, 620)
+
+[node name="brown_trout" parent="." instance=ExtResource("5_odgl7")]
+position = Vector2(633, 505)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="cup" parent="." instance=ExtResource("6_jprsc")]
+position = Vector2(92, 599)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

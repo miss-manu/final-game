@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d17emenubm2tm"]
+
+[ext_resource type="Script" path="res://scripts/manta.gd" id="1_1jwiw"]
+[ext_resource type="Texture2D" uid="uid://h4f7ukvee2m3" path="res://fishes + garbage (moving)/clear manta ray.png" id="1_ynao4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_npkse"]
+radius = 19.7528
+height = 65.0731
+
+[node name="manta" type="Area2D"]
+script = ExtResource("1_1jwiw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-06, 3.8147e-06)
+scale = Vector2(0.0314635, 0.0314635)
+texture = ExtResource("1_ynao4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -6)
+rotation = -0.955406
+shape = SubResource("CapsuleShape2D_npkse")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

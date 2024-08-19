@@ -1,0 +1,62 @@
+[gd_scene load_steps=13 format=3 uid="uid://cfn4ndj67yevu"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_7ylae"]
+[ext_resource type="Texture2D" uid="uid://xja7drw2a0p0" path="res://escape.png" id="2_hvi5x"]
+[ext_resource type="Script" path="res://scenes/Timer2.gd" id="3_dkgv8"]
+[ext_resource type="PackedScene" uid="uid://ff1iiyqbpbr0" path="res://prefabs/player.tscn" id="3_i00pw"]
+[ext_resource type="PackedScene" uid="uid://blefcs0qb72l1" path="res://prefabs/tuna.tscn" id="4_ruloj"]
+[ext_resource type="PackedScene" uid="uid://c85wolvpbjtn7" path="res://prefabs/brown_trout.tscn" id="5_odgl7"]
+[ext_resource type="PackedScene" uid="uid://bmllbuij67a7o" path="res://prefabs/cup.tscn" id="6_jprsc"]
+[ext_resource type="PackedScene" uid="uid://5x65jpes570a" path="res://prefabs/eel.tscn" id="7_7s35a"]
+[ext_resource type="PackedScene" uid="uid://3sfagjaneels" path="res://prefabs/shark.tscn" id="8_kcn38"]
+[ext_resource type="PackedScene" uid="uid://d17emenubm2tm" path="res://prefabs/manta.tscn" id="9_i8sgq"]
+[ext_resource type="PackedScene" uid="uid://cpkpkiva3shfl" path="res://prefabs/perch.tscn" id="10_75q0b"]
+[ext_resource type="PackedScene" uid="uid://hh1fibwrve6i" path="res://prefabs/rainbow_trout.tscn" id="11_vctm0"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_7ylae")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1163.0
+offset_bottom = 644.0
+texture = ExtResource("2_hvi5x")
+expand_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+script = ExtResource("3_dkgv8")
+
+[node name="player" parent="." instance=ExtResource("3_i00pw")]
+position = Vector2(120, 175)
+
+[node name="tuna" parent="." instance=ExtResource("4_ruloj")]
+position = Vector2(1046, 620)
+
+[node name="brown_trout" parent="." instance=ExtResource("5_odgl7")]
+position = Vector2(633, 505)
+
+[node name="cup" parent="." instance=ExtResource("6_jprsc")]
+position = Vector2(92, 599)
+
+[node name="eel" parent="." instance=ExtResource("7_7s35a")]
+position = Vector2(370, 566)
+
+[node name="shark" parent="." instance=ExtResource("8_kcn38")]
+position = Vector2(882, 442)
+
+[node name="manta" parent="." instance=ExtResource("9_i8sgq")]
+position = Vector2(237, 481)
+
+[node name="perch" parent="." instance=ExtResource("10_75q0b")]
+position = Vector2(463, 342)
+
+[node name="rainbow_trout" parent="." instance=ExtResource("11_vctm0")]
+position = Vector2(826, 560)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

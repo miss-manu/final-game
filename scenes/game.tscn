@@ -1,0 +1,101 @@
+[gd_scene load_steps=17 format=3 uid="uid://cfn4ndj67yevu"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_7ylae"]
+[ext_resource type="Texture2D" uid="uid://xja7drw2a0p0" path="res://escape.png" id="2_hvi5x"]
+[ext_resource type="PackedScene" uid="uid://ff1iiyqbpbr0" path="res://prefabs/player.tscn" id="3_i00pw"]
+[ext_resource type="PackedScene" uid="uid://blefcs0qb72l1" path="res://prefabs/tuna.tscn" id="4_ruloj"]
+[ext_resource type="PackedScene" uid="uid://f5fetv3dpxec" path="res://prefabs/snapper.tscn" id="5_7kvjm"]
+[ext_resource type="PackedScene" uid="uid://c85wolvpbjtn7" path="res://prefabs/brown_trout.tscn" id="5_odgl7"]
+[ext_resource type="PackedScene" uid="uid://bmllbuij67a7o" path="res://prefabs/cup.tscn" id="6_jprsc"]
+[ext_resource type="PackedScene" uid="uid://5x65jpes570a" path="res://prefabs/eel.tscn" id="7_7s35a"]
+[ext_resource type="PackedScene" uid="uid://3sfagjaneels" path="res://prefabs/shark.tscn" id="8_kcn38"]
+[ext_resource type="PackedScene" uid="uid://d17emenubm2tm" path="res://prefabs/manta.tscn" id="9_i8sgq"]
+[ext_resource type="PackedScene" uid="uid://cpkpkiva3shfl" path="res://prefabs/perch.tscn" id="10_75q0b"]
+[ext_resource type="PackedScene" uid="uid://cow7yx4cfsrul" path="res://prefabs/hanger.tscn" id="11_ts4uk"]
+[ext_resource type="PackedScene" uid="uid://hh1fibwrve6i" path="res://prefabs/rainbow_trout.tscn" id="11_vctm0"]
+[ext_resource type="PackedScene" uid="uid://sh0rrs6jhgah" path="res://prefabs/hook.tscn" id="12_ddfbj"]
+[ext_resource type="Theme" uid="uid://blbmge3vw8w87" path="res://new_theme.tres" id="14_pk417"]
+[ext_resource type="AudioStream" uid="uid://vtchsxmrennk" path="res://6638435731898368 (2).wav" id="15_f2ixv"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_7ylae")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1164.0
+offset_bottom = 646.0
+texture = ExtResource("2_hvi5x")
+expand_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="player" parent="." instance=ExtResource("3_i00pw")]
+position = Vector2(118, 184)
+
+[node name="tuna" parent="." instance=ExtResource("4_ruloj")]
+position = Vector2(1046, 620)
+
+[node name="snapper" parent="." instance=ExtResource("5_7kvjm")]
+position = Vector2(801, 414)
+
+[node name="brown_trout" parent="." instance=ExtResource("5_odgl7")]
+position = Vector2(633, 505)
+
+[node name="cup" parent="." instance=ExtResource("6_jprsc")]
+position = Vector2(92, 599)
+
+[node name="eel" parent="." instance=ExtResource("7_7s35a")]
+position = Vector2(406, 577)
+
+[node name="shark" parent="." instance=ExtResource("8_kcn38")]
+position = Vector2(157, 407)
+speed = 1
+
+[node name="manta" parent="." instance=ExtResource("9_i8sgq")]
+position = Vector2(225, 545)
+
+[node name="hanger" parent="." instance=ExtResource("11_ts4uk")]
+position = Vector2(1021, 481)
+
+[node name="perch" parent="." instance=ExtResource("10_75q0b")]
+position = Vector2(488, 431)
+
+[node name="rainbow_trout" parent="." instance=ExtResource("11_vctm0")]
+position = Vector2(826, 560)
+
+[node name="hook" parent="." instance=ExtResource("12_ddfbj")]
+position = Vector2(183, 329)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(118, 184)
+scale = Vector2(1.5, 1.5)
+stream = ExtResource("15_f2ixv")
+autoplay = true
+
+[node name="gameui" type="Control" parent="."]
+custom_minimum_size = Vector2(1152, 100)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("14_pk417")
+
+[node name="score_label" type="Label" parent="gameui"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -59.0
+offset_top = 14.0
+offset_right = 59.0
+offset_bottom = 59.0
+grow_horizontal = 2
+text = "SCORE: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

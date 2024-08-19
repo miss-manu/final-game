@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://5x65jpes570a"]
+
+[ext_resource type="Texture2D" uid="uid://p22y5bycj2yx" path="res://fishes + garbage (moving)/clear eel.png" id="1_4n4fc"]
+[ext_resource type="Script" path="res://scripts/eel.gd" id="1_xr2tv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fx7m"]
+size = Vector2(200, 20)
+
+[node name="eel" type="Area2D"]
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_xr2tv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_4n4fc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13.3333, -9)
+scale = Vector2(0.6, 0.6)
+shape = SubResource("RectangleShape2D_3fx7m")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

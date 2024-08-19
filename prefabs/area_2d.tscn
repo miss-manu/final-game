@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://csf7qtiedkgig"]
+
+[ext_resource type="Script" path="res://scripts/area_2d.gd" id="1_ee2i7"]
+[ext_resource type="Texture2D" uid="uid://wfgk0t5um6fm" path="res://fishes + garbage (moving)/clear hanger.png" id="1_j5v85"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edbli"]
+size = Vector2(70.5, 33)
+
+[node name="hanger" type="Area2D"]
+script = ExtResource("1_ee2i7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_j5v85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.75, -2.5)
+shape = SubResource("RectangleShape2D_edbli")

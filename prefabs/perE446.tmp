@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpkpkiva3shfl"]
+
+[ext_resource type="Script" path="res://scripts/perch.gd" id="1_j00nt"]
+[ext_resource type="Texture2D" uid="uid://ck8it4elb61to" path="res://fishes + garbage (moving)/clear perch.png" id="1_rgbiq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1efnn"]
+radius = 169.721
+height = 944.991
+
+[node name="perch" type="Area2D"]
+script = ExtResource("1_j00nt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.41074e-06, 2.98023e-08)
+scale = Vector2(0.0825397, 0.0825397)
+texture = ExtResource("1_rgbiq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 1)
+rotation = -1.57523
+scale = Vector2(0.0825397, 0.0825397)
+shape = SubResource("CapsuleShape2D_1efnn")

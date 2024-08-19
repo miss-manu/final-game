@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://f5fetv3dpxec"]
+
+[ext_resource type="Script" path="res://scripts/snapper.gd" id="1_g6ht2"]
+[ext_resource type="Texture2D" uid="uid://d0mg07rxg4tet" path="res://fishes + garbage (moving)/SNAPPER FISH.png" id="1_t0seb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_avpww"]
+radius = 15.0333
+height = 90.1997
+
+[node name="snapper" type="Area2D"]
+script = ExtResource("1_g6ht2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 2)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_t0seb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, -1)
+rotation = 1.50525
+shape = SubResource("CapsuleShape2D_avpww")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

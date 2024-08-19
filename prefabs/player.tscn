@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ff1iiyqbpbr0"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_hevsb"]
+[ext_resource type="Texture2D" uid="uid://c6bkiogu8mgfm" path="res://my_boat-removebg-preview.png" id="1_knv3y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yybm"]
+size = Vector2(91.1111, 125.333)
+
+[node name="player" type="Area2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_hevsb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_knv3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -1.33333)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_3yybm")
