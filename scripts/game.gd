@@ -88,7 +88,7 @@ func _update_ui():
 	$gameui/score_label.text = "Score: " + str(score)
 
 func _on_goodfish_killed():
-	score += 5
+	score += 10
 	_update_ui()
 
 func _on_badfish_killed():
