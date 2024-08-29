@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://coqaucdocik1a"]
+
+[ext_resource type="Texture2D" uid="uid://c3822xmplgkd" path="res://prefabs/happy dolphin clear.png" id="1_8u8hc"]
+[ext_resource type="Script" path="res://scripts/dolphin.gd" id="1_aa4cb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_siq6n"]
+radius = 49.6399
+height = 145.259
+
+[node name="dolphin" type="Area2D"]
+script = ExtResource("1_aa4cb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(0.304, 0.304)
+texture = ExtResource("1_8u8hc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14, -13)
+rotation = -0.99048
+shape = SubResource("CapsuleShape2D_siq6n")

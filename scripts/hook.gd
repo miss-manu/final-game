@@ -7,6 +7,7 @@ func _ready():
 	pass # Replace with function body.
 
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_pressed("hook_left") and position.x <1080:
@@ -19,4 +20,12 @@ func _process(delta):
 		position.y -= 7 	
 
 
+
+
+func _on_area_entered(area):
+	if area is dolphin:
+		get_tree().change_scene_to_file("res://scripts/mian_menu.tscn")
+	
+	
+	
 

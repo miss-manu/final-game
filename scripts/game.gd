@@ -15,6 +15,8 @@ var score = 0
 @onready var rainbow_trout = preload("res://prefabs/rainbow_trout.tscn")
 @onready var snapper_fish = preload("res://prefabs/snapper.tscn")
 
+@onready var dolphin_fish = preload ("res://prefabs/dolphin.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_update_ui()
@@ -84,6 +86,14 @@ func _on_timer_timeout():
 
 
 
+func _on_dtimer_timeout():
+	var dolphin = dolphin_fish.instantiate()
+	#postion 
+	var random = randi_range(350,610)
+	dolphin.position =  Vector2(1200,random)
+	add_child(dolphin)
+
+
 func _update_ui():
 	$gameui/score_label.text = "Score: " + str(score)
 
@@ -94,4 +104,5 @@ func _on_goodfish_killed():
 func _on_badfish_killed():
 	score += -2
 	_update_ui()	
+
 

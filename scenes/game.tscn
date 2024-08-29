@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cfn4ndj67yevu"]
+[gd_scene load_steps=18 format=3 uid="uid://cfn4ndj67yevu"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_7ylae"]
 [ext_resource type="Texture2D" uid="uid://xja7drw2a0p0" path="res://escape.png" id="2_hvi5x"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cow7yx4cfsrul" path="res://prefabs/hanger.tscn" id="11_ts4uk"]
 [ext_resource type="PackedScene" uid="uid://hh1fibwrve6i" path="res://prefabs/rainbow_trout.tscn" id="11_vctm0"]
 [ext_resource type="PackedScene" uid="uid://sh0rrs6jhgah" path="res://prefabs/hook.tscn" id="12_ddfbj"]
+[ext_resource type="PackedScene" uid="uid://coqaucdocik1a" path="res://prefabs/dolphin.tscn" id="14_b3eot"]
 [ext_resource type="Theme" uid="uid://blbmge3vw8w87" path="res://new_theme.tres" id="14_pk417"]
 [ext_resource type="AudioStream" uid="uid://vtchsxmrennk" path="res://6638435731898368 (2).wav" id="15_f2ixv"]
 
@@ -28,6 +29,10 @@ offset_bottom = 646.0
 texture = ExtResource("2_hvi5x")
 expand_mode = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="dtimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
@@ -67,6 +72,9 @@ position = Vector2(488, 431)
 [node name="rainbow_trout" parent="." instance=ExtResource("11_vctm0")]
 position = Vector2(826, 560)
 
+[node name="dolphin" parent="." instance=ExtResource("14_b3eot")]
+position = Vector2(1087, 389)
+
 [node name="hook" parent="." instance=ExtResource("12_ddfbj")]
 position = Vector2(183, 329)
 
@@ -98,4 +106,5 @@ text = "SCORE: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="timeout" from="dtimer" to="." method="_on_dtimer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
