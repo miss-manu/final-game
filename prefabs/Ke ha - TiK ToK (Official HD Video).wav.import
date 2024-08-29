@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d3ofl46dq6jgl"
+path="res://.godot/imported/Ke ha - TiK ToK (Official HD Video).wav-6e4fabc30c75ddfbe65d20bb46a4ecfb.sample"
+
+[deps]
+
+source_file="res://prefabs/Ke ha - TiK ToK (Official HD Video).wav"
+dest_files=["res://.godot/imported/Ke ha - TiK ToK (Official HD Video).wav-6e4fabc30c75ddfbe65d20bb46a4ecfb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

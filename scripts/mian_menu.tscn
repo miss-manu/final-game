@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://c50l2ps6eop56"]
+[gd_scene load_steps=8 format=3 uid="uid://c50l2ps6eop56"]
 
 [ext_resource type="Script" path="res://Mian Menu.gd" id="1_8ykxk"]
 [ext_resource type="Texture2D" uid="uid://bl71dfp20pn01" path="res://scenes/escape123456789.png" id="2_iea7c"]
-[ext_resource type="Texture2D" uid="uid://co6ip2012045k" path="res://scenes/image (1)33030.png" id="3_o0yuf"]
-[ext_resource type="Texture2D" uid="uid://veo1e0agu13k" path="res://unnamed-removebg-previewhuhui.png" id="4_2pbsq"]
-[ext_resource type="Texture2D" uid="uid://13gba4sqj488" path="res://yelowww.png" id="5_xualn"]
-[ext_resource type="Texture2D" uid="uid://d3gbhs4kiij0y" path="res://rededdd.png" id="6_es0ny"]
+[ext_resource type="Texture2D" uid="uid://ci7d2jtkjostp" path="res://prefabs/try this 35.png" id="3_8vap3"]
+[ext_resource type="Texture2D" uid="uid://4od5pdrlwjt0" path="res://prefabs/try this final.png" id="4_uq60h"]
+[ext_resource type="Texture2D" uid="uid://bg0f4obym7q68" path="res://prefabs/try this 80.png" id="5_ypfva"]
+[ext_resource type="Texture2D" uid="uid://cvgxxthwk55qy" path="res://prefabs/final .png" id="6_trfqi"]
+[ext_resource type="AudioStream" uid="uid://ejpgoqsu6mp3" path="res://prefabs/Ke ha - TiK ToK (Official HD Video) (2).wav" id="7_21t1e"]
 
 [node name="Mian Menu" type="Node2D"]
 script = ExtResource("1_8ykxk")
@@ -24,22 +25,27 @@ offset_bottom = 40.0
 
 [node name="start" type="TextureButton" parent="Button_manager"]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 309.0
-offset_right = 252.0
-offset_bottom = 428.0
-texture_normal = ExtResource("3_o0yuf")
-texture_pressed = ExtResource("4_2pbsq")
-texture_hover = ExtResource("4_2pbsq")
+offset_left = 32.0
+offset_top = 326.0
+offset_right = 205.0
+offset_bottom = 411.0
+texture_normal = ExtResource("3_8vap3")
+texture_pressed = ExtResource("4_uq60h")
+texture_hover = ExtResource("4_uq60h")
 
 [node name="end" type="TextureButton" parent="Button_manager"]
 layout_mode = 0
-offset_left = 45.0
-offset_top = 404.0
-offset_right = 183.0
-offset_bottom = 498.0
-texture_normal = ExtResource("5_xualn")
-texture_hover = ExtResource("6_es0ny")
+offset_left = 31.0
+offset_top = 427.0
+offset_right = 165.0
+offset_bottom = 514.0
+texture_normal = ExtResource("5_ypfva")
+texture_pressed = ExtResource("6_trfqi")
+texture_hover = ExtResource("6_trfqi")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_21t1e")
+autoplay = true
 
 [connection signal="pressed" from="Button_manager/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button_manager/end" to="." method="_on_end_pressed"]
