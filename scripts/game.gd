@@ -14,7 +14,6 @@ var score = 0
 @onready var green_perch = preload("res://prefabs/perch.tscn")
 @onready var rainbow_trout = preload("res://prefabs/rainbow_trout.tscn")
 @onready var snapper_fish = preload("res://prefabs/snapper.tscn")
-
 @onready var dolphin_fish = preload ("res://prefabs/dolphin.tscn")
 
 # Called when the node enters the scene tree for the first time.
