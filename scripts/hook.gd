@@ -21,10 +21,9 @@ func _process(delta):
 
 
 
-
 func _on_area_entered(area):
 	if area is dolphin:
-		get_tree().change_scene_to_file("res://scripts/mian_menu.tscn")
+		get_tree().change_scene_to_file("res://scenes/end_page.tscn")
 	
 	
 	

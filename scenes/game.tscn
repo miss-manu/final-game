@@ -35,7 +35,7 @@ wait_time = 10.0
 autostart = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 autostart = true
 
 [node name="player" parent="." instance=ExtResource("3_i00pw")]
@@ -58,7 +58,6 @@ position = Vector2(406, 577)
 
 [node name="shark" parent="." instance=ExtResource("8_kcn38")]
 position = Vector2(157, 407)
-speed = 1
 
 [node name="manta" parent="." instance=ExtResource("9_i8sgq")]
 position = Vector2(225, 545)
@@ -73,7 +72,7 @@ position = Vector2(488, 431)
 position = Vector2(826, 560)
 
 [node name="dolphin" parent="." instance=ExtResource("14_b3eot")]
-position = Vector2(1087, 389)
+position = Vector2(1330, 561)
 
 [node name="hook" parent="." instance=ExtResource("12_ddfbj")]
 position = Vector2(183, 329)

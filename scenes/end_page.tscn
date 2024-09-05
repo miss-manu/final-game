@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://b785rqd277klf"]
+
+[ext_resource type="Texture2D" uid="uid://ce1ulh66pbxhd" path="res://scripts/end game screen.jpg" id="1_ir2dc"]
+[ext_resource type="Script" path="res://scripts/end_page.gd" id="1_vdajk"]
+[ext_resource type="Texture2D" uid="uid://dwbc1rdcrn581" path="res://fishes + garbage (moving)/fishesss/Screenshot_2024-08-30_232906-removebg-preview.png" id="3_7qhyr"]
+[ext_resource type="Texture2D" uid="uid://bihegs3owytop" path="res://fishes + garbage (moving)/fishesss/Screenshot_2024-08-30_233020-removebg-preview.png" id="3_q36l7"]
+[ext_resource type="Texture2D" uid="uid://dxby58l8psyx8" path="res://fishes + garbage (moving)/fishesss/Screenshot_2024-08-30_233012-removebg-preview.png" id="4_e661e"]
+[ext_resource type="Texture2D" uid="uid://m0ic6edr0wqi" path="res://fishes + garbage (moving)/fishesss/Screenshot_2024-08-30_232915-removebg-preview.png" id="4_rxjn7"]
+
+[node name="End page" type="Node2D"]
+script = ExtResource("1_vdajk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -46.0
+offset_top = -126.0
+offset_right = 1143.0
+offset_bottom = 701.0
+texture = ExtResource("1_ir2dc")
+expand_mode = 2
+
+[node name="Buttonmanage" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="restart" type="TextureButton" parent="Buttonmanage"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 255.0
+offset_right = 280.0
+offset_bottom = 354.0
+texture_normal = ExtResource("3_7qhyr")
+texture_pressed = ExtResource("4_e661e")
+texture_hover = ExtResource("4_e661e")
+
+[node name="quitgame" type="TextureButton" parent="Buttonmanage"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 255.0
+offset_right = 1080.0
+offset_bottom = 353.0
+texture_normal = ExtResource("4_rxjn7")
+texture_pressed = ExtResource("3_q36l7")
+texture_hover = ExtResource("3_q36l7")
+
+[connection signal="pressed" from="Buttonmanage/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Buttonmanage/quitgame" to="." method="_on_quitgame_pressed"]

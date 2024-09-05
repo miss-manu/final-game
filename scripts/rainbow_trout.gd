@@ -1,7 +1,7 @@
 extends Area2D
 
 
-@export var speed = 1
+@export var speed = 3
 signal rainbow_killed
 
 # Called when the node enters the scene tree for the first time.

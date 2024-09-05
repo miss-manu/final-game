@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed = 5
+@export var speed = 2
 signal brown_killed 
 # Called when the node enters the scene tree for the first time.
 func _ready():

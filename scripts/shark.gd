@@ -1,7 +1,7 @@
 extends Area2D
 
 var being_dragged = false 
-@export var speed = 4
+@export var speed = 1
 signal shark_killed 
 
 
