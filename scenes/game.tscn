@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://cfn4ndj67yevu"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_7ylae"]
-[ext_resource type="Texture2D" uid="uid://xja7drw2a0p0" path="res://escape.png" id="2_hvi5x"]
+[ext_resource type="Texture2D" uid="uid://xja7drw2a0p0" path="res://scenes/escape (2).png" id="2_hvi5x"]
 [ext_resource type="PackedScene" uid="uid://ff1iiyqbpbr0" path="res://prefabs/player.tscn" id="3_i00pw"]
 [ext_resource type="PackedScene" uid="uid://blefcs0qb72l1" path="res://prefabs/tuna.tscn" id="4_ruloj"]
 [ext_resource type="PackedScene" uid="uid://f5fetv3dpxec" path="res://prefabs/snapper.tscn" id="5_7kvjm"]
@@ -15,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://hh1fibwrve6i" path="res://prefabs/rainbow_trout.tscn" id="11_vctm0"]
 [ext_resource type="PackedScene" uid="uid://sh0rrs6jhgah" path="res://prefabs/hook.tscn" id="12_ddfbj"]
 [ext_resource type="PackedScene" uid="uid://coqaucdocik1a" path="res://prefabs/dolphin.tscn" id="14_b3eot"]
-[ext_resource type="Theme" uid="uid://blbmge3vw8w87" path="res://new_theme.tres" id="14_pk417"]
-[ext_resource type="AudioStream" uid="uid://vtchsxmrennk" path="res://6638435731898368 (2).wav" id="15_f2ixv"]
+[ext_resource type="Theme" uid="uid://blbmge3vw8w87" path="res://music + extra's/new_theme.tres" id="14_pk417"]
+[ext_resource type="AudioStream" uid="uid://vtchsxmrennk" path="res://music + extra's/6638435731898368 (2).wav" id="15_f2ixv"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_7ylae")
@@ -39,7 +39,7 @@ wait_time = 3.0
 autostart = true
 
 [node name="player" parent="." instance=ExtResource("3_i00pw")]
-position = Vector2(118, 184)
+position = Vector2(119, 204)
 
 [node name="tuna" parent="." instance=ExtResource("4_ruloj")]
 position = Vector2(1046, 620)
@@ -72,12 +72,14 @@ position = Vector2(488, 431)
 position = Vector2(826, 560)
 
 [node name="dolphin" parent="." instance=ExtResource("14_b3eot")]
+visible = false
 position = Vector2(1330, 561)
 
 [node name="hook" parent="." instance=ExtResource("12_ddfbj")]
-position = Vector2(183, 329)
+position = Vector2(186, 354)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+visible = false
 position = Vector2(118, 184)
 scale = Vector2(1.5, 1.5)
 stream = ExtResource("15_f2ixv")
@@ -92,6 +94,7 @@ offset_bottom = 40.0
 theme = ExtResource("14_pk417")
 
 [node name="score_label" type="Label" parent="gameui"]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

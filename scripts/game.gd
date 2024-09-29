@@ -83,26 +83,19 @@ func _on_timer_timeout():
 	add_child(rainbow)
 	add_child(snapper)
 
-
-
 func _on_dtimer_timeout():
 	var dolphin = dolphin_fish.instantiate()
 	#postion 
 	var random = randi_range(350,610)
 	dolphin.position =  Vector2(1200,random)
 	add_child(dolphin)
-
-
 func _update_ui():
 	$gameui/score_label.text = "Score: " + str(score)
-
 func _on_goodfish_killed():
-	score += 10
+	score += 5
 	_update_ui()
-
 func _on_badfish_killed():
 	score += -2
 	_update_ui()	
-
 func _on_texture_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/list.tscn")

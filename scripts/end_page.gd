@@ -15,4 +15,4 @@ func _on_quitgame_pressed():
 
 
 func _on_restart_pressed():
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	get_tree().change_scene_to_file("res://scenes/mian_menu.tscn")

@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://b785rqd277klf"]
 
-[ext_resource type="Texture2D" uid="uid://ce1ulh66pbxhd" path="res://scripts/end game screen.jpg" id="1_ir2dc"]
+[ext_resource type="Texture2D" uid="uid://ce1ulh66pbxhd" path="res://scenes/end game screen.jpg" id="1_ir2dc"]
 [ext_resource type="Script" path="res://scripts/end_page.gd" id="1_vdajk"]
-[ext_resource type="Texture2D" uid="uid://dwbc1rdcrn581" path="res://fishes + garbage (moving)/fishesss/Screenshot_2024-08-30_232906-removebg-preview.png" id="3_7qhyr"]
-[ext_resource type="Texture2D" uid="uid://bihegs3owytop" path="res://fishes + garbage (moving)/fishesss/Screenshot_2024-08-30_233020-removebg-preview.png" id="3_q36l7"]
-[ext_resource type="Texture2D" uid="uid://dxby58l8psyx8" path="res://fishes + garbage (moving)/fishesss/Screenshot_2024-08-30_233012-removebg-preview.png" id="4_e661e"]
-[ext_resource type="Texture2D" uid="uid://m0ic6edr0wqi" path="res://fishes + garbage (moving)/fishesss/Screenshot_2024-08-30_232915-removebg-preview.png" id="4_rxjn7"]
+[ext_resource type="Texture2D" uid="uid://dwbc1rdcrn581" path="res://buttom photos/fishesss/Screenshot_2024-08-30_232906-removebg-preview.png" id="3_7qhyr"]
+[ext_resource type="Texture2D" uid="uid://bihegs3owytop" path="res://buttom photos/fishesss/Screenshot_2024-08-30_233020-removebg-preview.png" id="3_q36l7"]
+[ext_resource type="Texture2D" uid="uid://dxby58l8psyx8" path="res://buttom photos/fishesss/Screenshot_2024-08-30_233012-removebg-preview.png" id="4_e661e"]
+[ext_resource type="Texture2D" uid="uid://m0ic6edr0wqi" path="res://buttom photos/fishesss/Screenshot_2024-08-30_232915-removebg-preview.png" id="4_rxjn7"]
 
 [node name="End page" type="Node2D"]
 script = ExtResource("1_vdajk")

@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://c50l2ps6eop56"]
+
+[ext_resource type="Script" path="res://scripts/Mian Menu.gd" id="1_uyv5t"]
+[ext_resource type="Texture2D" uid="uid://bl71dfp20pn01" path="res://scenes/escape123456789.png" id="2_fln71"]
+[ext_resource type="Texture2D" uid="uid://ci7d2jtkjostp" path="res://prefabs/try this 35.png" id="3_31d8y"]
+[ext_resource type="Texture2D" uid="uid://4od5pdrlwjt0" path="res://prefabs/try this final.png" id="4_uj5q8"]
+[ext_resource type="Texture2D" uid="uid://bg0f4obym7q68" path="res://prefabs/try this 80.png" id="5_fj68v"]
+[ext_resource type="Texture2D" uid="uid://cvgxxthwk55qy" path="res://prefabs/final .png" id="6_gpn18"]
+[ext_resource type="AudioStream" uid="uid://cahgcm4qwhlwt" path="res://prefabs/VINTAGE SURF Music  [music no copyright] Surf Music Instrumental  Surf Compilation-[AudioTrimmer.com]-[AudioTrimmer.com].wav" id="7_fdmks"]
+[ext_resource type="Texture2D" uid="uid://bxcg3ntfkam0b" path="res://buttom photos/Screenshot_2024-08-31_011413-removebg-preview.png" id="8_ax1mu"]
+[ext_resource type="Texture2D" uid="uid://r1vnuc5j1c3j" path="res://buttom photos/Screenshot_2024-08-31_012515-removebg-preview (1).png" id="9_jd8o6"]
+
+[node name="Mian Menu" type="Node2D"]
+script = ExtResource("1_uyv5t")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 1182.0
+offset_bottom = 800.0
+texture = ExtResource("2_fln71")
+expand_mode = 2
+
+[node name="Button_manager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="start" type="TextureButton" parent="Button_manager"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 326.0
+offset_right = 205.0
+offset_bottom = 411.0
+texture_normal = ExtResource("3_31d8y")
+texture_pressed = ExtResource("4_uj5q8")
+texture_hover = ExtResource("4_uj5q8")
+
+[node name="end" type="TextureButton" parent="Button_manager"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 427.0
+offset_right = 165.0
+offset_bottom = 514.0
+texture_normal = ExtResource("5_fj68v")
+texture_pressed = ExtResource("6_gpn18")
+texture_hover = ExtResource("6_gpn18")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_fdmks")
+autoplay = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 644.0
+offset_top = 12.0
+offset_right = 708.0
+offset_bottom = 45.0
+scale = Vector2(3.04664, 2.46645)
+
+[node name="Screenshot2024-08-31011413-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(735, 54)
+texture = ExtResource("8_ax1mu")
+
+[node name="Screenshot2024-08-31012515-removebg-preview(1)" type="Sprite2D" parent="."]
+position = Vector2(735, 181)
+texture = ExtResource("9_jd8o6")
+
+[connection signal="pressed" from="Button_manager/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button_manager/end" to="." method="_on_end_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

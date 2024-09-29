@@ -10,9 +10,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_pressed("hook_left") and position.x <1080:
+	if Input.is_action_pressed("hook_left") and position.x <900:
 		position.x += 7
-	if Input.is_action_pressed("hook_right") and position.x >183:
+	if Input.is_action_pressed("hook_right") and position.x >40:
 		position.x -= 7
 	if Input.is_action_pressed("hook_down") and position.y <630:
 		position.y += 7 
