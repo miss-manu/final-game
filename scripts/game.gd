@@ -2,7 +2,9 @@ extends Node2D
 
 # in charge of keeping score and spawning the enemies 
 
-var score = 0 
+var score = 0
+var gscore = 5
+var bscore = -2
 
 @onready var fish_tuna = preload("res://prefabs/tuna.tscn")
 @onready var fish_Btrout = preload("res://prefabs/brown_trout.tscn")
